@@ -3,14 +3,15 @@ import Link from "next/link";
 import Avatar from "./avatar";
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
-
 type Props = {
   title: string;
   coverImage: string;
   date: string;
   excerpt: string;
-  author: Author;
+  author: Author,
+  tags: string[];
   slug: string;
+  
 };
 
 export function PostPreview({
@@ -20,6 +21,7 @@ export function PostPreview({
   excerpt,
   author,
   slug,
+  tags,
 }: Props) {
   return (
     <div>
@@ -34,6 +36,11 @@ export function PostPreview({
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
+      <ul className="flex gap-x-2">
+        {
+          tags.map((tag) => <li className="font-bold mb-12">{tag}</li>)
+        }
+      </ul>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />
     </div>

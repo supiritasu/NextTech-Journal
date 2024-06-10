@@ -9,15 +9,23 @@ type Props = {
   coverImage: string;
   date: string;
   author: Author;
+  tags?: string[];  // tags をオプショナルにする
 };
 
-export function PostHeader({ title, coverImage, date, author }: Props) {
+export function PostHeader({ title, coverImage, date, author, tags = [] }: Props) {  // デフォルト値を空の配列に設定
+  const tagList = tags.map((tag) => (
+    <li className="font-bold mb-12" key={tag}>
+      <a href={`/tags/${tag}`}>{tag}</a>
+    </li>
+  ));
+
   return (
     <>
       <PostTitle>{title}</PostTitle>
       <div className="hidden md:block md:mb-12">
         <Avatar name={author.name} picture={author.picture} />
       </div>
+      <ul>{tagList}</ul> {/* tagsリストをレンダリングする */}
       <div className="mb-8 md:mb-16 sm:mx-0">
         <CoverImage title={title} src={coverImage} />
       </div>

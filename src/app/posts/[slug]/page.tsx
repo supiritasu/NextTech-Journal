@@ -20,15 +20,16 @@ export default async function Post({ params }: Params) {
 
   return (
     <main>
-      <Alert preview={post.preview} />
+      {/* <Alert preview={post.preview} /> */}
+      <Header />
       <Container>
-        <Header />
         <article className="mb-32">
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
             author={post.author}
+            tags={post.tags}
           />
           <PostBody content={content} />
         </article>

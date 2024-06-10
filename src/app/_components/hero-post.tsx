@@ -11,6 +11,7 @@ type Props = {
   excerpt: string;
   author: Author;
   slug: string;
+  tags: string[]
 };
 
 export function HeroPost({
@@ -20,6 +21,7 @@ export function HeroPost({
   excerpt,
   author,
   slug,
+  tags,
 }: Props) {
   return (
     <section>
@@ -40,6 +42,14 @@ export function HeroPost({
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
           <Avatar name={author.name} picture={author.picture} />
+          {Array.isArray(tags) && tags.length > 0 && (
+          <ul className="flex gap-x-2">
+          {tags.map((tag) => (
+            <li key={tag} className="font-bold mb-12">
+            {tag}
+            </li>
+            ))}
+          </ul>)}
         </div>
       </div>
     </section>

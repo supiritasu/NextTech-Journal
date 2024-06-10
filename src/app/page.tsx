@@ -3,7 +3,10 @@ import { HeroPost } from "@/app/_components/hero-post";
 import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "@/lib/api";
-
+import Header from "./_components/header";
+import { ContainerWithChildren } from "postcss/lib/container";
+import { Contact } from "./_components/contact";
+import { Genere } from "./_components/genre";
 export default function Index() {
   const allPosts = getAllPosts();
 
@@ -13,7 +16,10 @@ export default function Index() {
 
   return (
     <main>
+     <Header />
       <Container>
+        
+        
         <Intro />
         <HeroPost
           title={heroPost.title}
@@ -22,9 +28,20 @@ export default function Index() {
           author={heroPost.author}
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
+          tags={heroPost.tags}
         />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+
+        
       </Container>
+
+      <Genere/>
+
+      <Container>
+      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      </Container>
+      
+      <hr/>
+      <Contact />
     </main>
   );
 }
