@@ -1,5 +1,6 @@
 import { Post } from "@/interfaces/post";
 import { PostPreview } from "./post-preview";
+import Tabs from '../_components/Tabs'
 
 type Props = {
   posts: Post[];
@@ -23,8 +24,10 @@ export function MoreStories({ posts }: Props) {
             excerpt={post.excerpt}
             tags={post.tags}
           />
+          
         ))}
       </div>
+      <Tabs tabs={['Tab1', 'Tab2', 'Tab3']}/>
     </section>
   );
 }

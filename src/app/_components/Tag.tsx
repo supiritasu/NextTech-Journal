@@ -1,3 +1,4 @@
+"use client"; 
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import TagPage from "@/app/_components/TagPages";
@@ -6,14 +7,14 @@ import { Post } from "@/interfaces/post";
 
 type Props = {
   posts: Post[];
-  tag: string;
+  tag: string[];
 };
 
 const Tag = ({ posts, tag }: Props) => {
   return (
     <>
       <Head>
-        <title>Tag: {tag}</title>
+        <title>Tags: {tag.join(", ")}</title>
       </Head>
       <TagPage posts={posts} tag={tag} />
     </>
@@ -22,8 +23,11 @@ const Tag = ({ posts, tag }: Props) => {
 
 export default Tag;
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const tag = params?.tag as string;
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  const tagParam = params?.tag;
+
+  // params?.tag が文字列であれば配列に変換し、配列であればそのまま使用
+  const tag = Array.isArray(tagParam) ? tagParam : [tagParam];
   const posts = getPostsByTag(tag);
 
   return {

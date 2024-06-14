@@ -27,18 +27,18 @@ export function getAllPosts(): Post[] {
   return posts;
 }
 
-export function getPostsByTag(tag: string): Post[] {
-  const slugs = getPostSlugs();
+export function getPostsByTag(tag: string) {
+  const slugs = getPostSlugs()
   return slugs
-    .map((slug) => getPostBySlug(slug))
-    .filter((post) => post.tags.includes(tag))
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  .map((slug) =>  getPostBySlug(slug))
+  .filter((post) => post.tags.includes(tag))
+  .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
 }
 
-export function getAllTags(): string[] {
+export function getAllTags() {
   const allPostTags = getAllPosts()
-    .flatMap((post) => post.tags)
-    .sort();
+  .flatMap((post) => post.tags)
+  .sort()
 
-  return Array.from(new Set(allPostTags));
+  return Array.from(new Set(allPostTags))
 }
