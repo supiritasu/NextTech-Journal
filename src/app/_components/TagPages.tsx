@@ -15,6 +15,7 @@ type Props = {
   tag: string;
 };
 
+
 export default function Tag({ posts, tag }: Props) {
   return <TagPage posts={posts} tag={tag} />;
 }
