@@ -20,7 +20,7 @@ const PostHeader = ({ title, date, tags }: Props) => {
         {tags && tags.length > 0 && (
           <ul className="flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <li key={tag} className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+              <li key={tag} className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
                 {tag}
               </li>
             ))}

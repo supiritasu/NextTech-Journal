@@ -8,9 +8,6 @@ author:
   picture: "/assets/blog/authors/joe.jpeg"
 ogImage:
   url: "/assets/blog/preview/cover.jpg"
-#  tags: 
-#    - 'tag1'
-#    - 'tag2'
 tags: ['留学','英語']
 ---
 
