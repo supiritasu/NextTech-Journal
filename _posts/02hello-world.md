@@ -2,7 +2,7 @@
 title: "#2 やっほー"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
 coverImage: "/assets/blog/hello-world/cover.jpg"
-date: "2024/06/20"
+date: "2024/06/18 17:10"
 author:
   name: Tim Neutkens
   picture: "/assets/blog/authors/tim.jpeg"

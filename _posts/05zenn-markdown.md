@@ -2,7 +2,7 @@
 title: "#5 zennのマークダウン記法で書く"
 excerpt: "Zenn独自のマークダウン記法を紹介。メッセージボックスの作成方法、数式の挿入、YouTubeの埋め込み、GitHubリンクの表示など、Zenn特有の機能を使った記事の書き方を解説します。"
 coverImage: "/assets/blog/preview/cover.jpg"
-date: "2024/06/20"
+date: "2024/06/19 11:10"
 
 ogImage:
   url: "/assets/blog/preview/cover.jpg"
