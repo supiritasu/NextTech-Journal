@@ -4,7 +4,6 @@ import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "@/lib/api";
 import Header from "./_components/header";
-import { ContainerWithChildren } from "postcss/lib/container";
 import { Contact } from "./_components/contact";
 import { Genere } from "./_components/genre";
 export default function Index() {
@@ -25,7 +24,6 @@ export default function Index() {
           title={heroPost.title}
           coverImage={heroPost.coverImage}
           date={heroPost.date}
-          author={heroPost.author}
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
           tags={heroPost.tags}

@@ -65,7 +65,6 @@ const PostList: React.FC = () => {
         </div>
       </div>
     </section>
-    <Footer/>
     </>
   );
 };
