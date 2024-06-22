@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Post } from "@/interfaces/post";
 import Link from 'next/link';
+import Author from './author';
 
 type Props = {
   posts: Post[];
@@ -64,7 +65,15 @@ export function BlogList({ posts }: Props) {
                   </button>
                 )}
               </div>
+              <Author
+                name="Supiritasu"
+                picture="/favicon/twitter_icon.jpeg"
+                bio="A short bio about yourself. You can describe your interests, expertise, or anything else you'd like readers to know."
+                twitter="your_twitter_handle"
+                github="your_github_username"
+              />
             </div>
+
           </aside>
           <div className="w-full md:w-3/4 px-4">
             <div className="space-y-10">
