@@ -25,8 +25,6 @@ export default function Index() {
       </Container>
       <Genere/>
 
-      {/* <hr/>
-      <Contact /> */}
     </main>
   );
 }

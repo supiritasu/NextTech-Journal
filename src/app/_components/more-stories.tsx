@@ -53,7 +53,6 @@ export function MoreStories({ posts }: Props) {
           />
         ))}
       </div>
-      <Tabs tabs={['Tab1', 'Tab2', 'Tab3']} />
     </section>
   );
 }
