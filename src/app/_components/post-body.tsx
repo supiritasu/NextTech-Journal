@@ -1,10 +1,13 @@
 import markdownStyles from "./markdown-styles.module.css";
 
-type Props = {
-  content: string;
-};
 
-export function PostBody({ content }: Props) {
+
+interface PostBodyProps {
+  content: string;
+  className?: string;
+}
+
+const PostBody: React.FC<PostBodyProps> = ({ content, className = '' }) => {
   return (
     <div className="max-w-2xl mx-auto">
       <div
@@ -14,3 +17,7 @@ export function PostBody({ content }: Props) {
     </div>
   );
 }
+
+export default PostBody;
+
+

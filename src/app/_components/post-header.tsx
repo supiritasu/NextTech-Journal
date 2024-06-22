@@ -1,37 +1,46 @@
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
-import { PostTitle } from "@/app/_components/post-title";
+import { ReactNode } from "react";
 
 type Props = {
   title: string;
   coverImage: string;
   date: string;
-  tags: string[];  // tags をオプショナルにする
+  tags?: string[]; // Tags are now optional
 };
 
+const PostHeader = ({ title, date, tags }: Props) => {
+  const PostTitle = ({ children, className = "" }: { children?: ReactNode; className?: string }) => {
+    return (
+      <h1 className={`text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight md:leading-none mb-8 text-center md:text-left ${className}`}>
+        {children}
+      </h1>
+    );
+  };
 
-
-const PostHeader = ({ title, coverImage, date, tags }: Props) => {
   return (
-    <>
-      <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12">
-      </div>
-      <ul className="flex gap-x-2">
-        {
-          tags.map((tag) => <li className="font-bold mb-12"><a href={`/tags/${tag}`}>{tag}</a></li>)
-        }
-      </ul>
+    <header className="bg-gray-900 text-white p-8 rounded-lg shadow-lg">
+      <PostTitle className="text-white"> {/* Changed color to white */}
+        {title}
+      </PostTitle>
 
-      <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6">
-        </div>
-        <div className="mb-6 text-lg">
+      {tags && tags.length > 0 && (
+        <ul className="flex flex-wrap gap-2 mt-4"> {/* Adjusted spacing and margin */}
+          {tags.map((tag) => (
+            <li key={tag} className="text-sm font-semibold bg-gray-700 text-white px-2 py-1 rounded"> {/* Styled tags */}
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div className="max-w-2xl mx-auto mt-4">
+        <div className="mb-4 text-sm leading-relaxed text-gray-400"> {/* Adjusted font size, line height, and color */}
           <DateFormatter dateString={date} />
         </div>
       </div>
-    </>
-  )
-}
+    </header>
+  );
+};
 
-export default PostHeader
+export default PostHeader;
