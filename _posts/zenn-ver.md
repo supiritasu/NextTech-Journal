@@ -1,5 +1,5 @@
 ---
-title: "Next.jsのApp Routerを使用したZennスタイルのMarkdownサポート"
+title: "6 Next.jsのApp Routerを使用したZennスタイルのMarkdownサポート"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
 coverImage: "/assets/blog/preview/cover.jpg"
 date: "2020-03-16T05:35:07.322Z"
@@ -53,18 +53,9 @@ yarn add zenn-markdown-html zenn-content-css zenn-embed-elements
 
 
 
-## 1. blog-starterテンプレートでプロジェクトを作成
 
 
-```bash
-npx create-next-app@latest blog-starter --example blog-starter
-cd blog-starter
-```
-
-
-
-
-## 2. markdownToHtml.tsの設定
+## 1. markdownToHtml.tsの設定
 
 src/lib/markdownToHtml.tsファイルを編集し，zenn-markdown-htmlを使用してMarkdownをHTMLに変換する関数を実装します．
 
@@ -76,7 +67,7 @@ export default async function markdownToHtml(markdown: string): Promise<string> 
 }
 ```
 
-## 3. layout.tsxの設定
+## 2. layout.tsxの設定
 src/app/layout.tsxファイルを編集し，zenn-content-cssとzenn-embed-elementsをインポートします．
 
 ```ts:layout.tsx
@@ -90,6 +81,75 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     ・・・
 ```
 
+:::message　alert
+layout.tsxの先頭に`"use client";`を必ず記述してください！
+:::
+
+
+
+
+
+::::details layout.tsxのコード全体
+```ts
+"use client";
+import { useEffect } from 'react';
+import Footer from "@/app/_components/footer";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import 'zenn-content-css';
+
+const inter = Inter({ subsets: ["latin"] });
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    import('zenn-embed-elements');
+  }, []);
+
+  return (
+    <html lang="en">
+      <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link
+          rel="mask-icon"
+          href="/favicon/safari-pinned-tab.svg"
+          color="#000000"
+        />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta
+          name="msapplication-config"
+          content="/favicon/browserconfig.xml"
+        />
+        <meta name="theme-color" content="#000" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      </head>
+      <body className={inter.className}>
+        <div className="min-h-screen">{children}</div>
+        <Footer />
+      </body>
+    </html>
+  );
+}
+```
+::::
+## 3. metadata.tsの作成
+
 
 以上の手順に従って設定することで，Next.jsのApp RouterプロジェクトにZennスタイルのMarkdownを導入できます．
-
