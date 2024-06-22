@@ -1,4 +1,11 @@
 export type Post = {
+  author: {
+    name: string;
+    picture: string;
+    bio: string;
+    twitter?: string;
+    github?: string;
+  };
   slug: string;
   title: string;
   date: string;
@@ -7,8 +14,7 @@ export type Post = {
   ogImage: {
     url: string;
   };
-  content: string,
-  tags: string[],
+  content: string;
+  tags: string[];
   preview?: boolean;
 };
-

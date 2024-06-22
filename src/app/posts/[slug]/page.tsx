@@ -6,7 +6,8 @@ import Alert from "@/app/_components/alert";
 import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
-import  PostHeader  from "@/app/_components/post-header";
+import PostHeader from "@/app/_components/post-header";
+import Author from "@/app/_components/author";
 import markdownToHtml from 'zenn-markdown-html';
 
 export default async function Post({ params }: Params) {
@@ -31,6 +32,7 @@ export default async function Post({ params }: Params) {
             tags={post.tags}
           />
           <PostBody content={content} />
+
         </article>
       </Container>
     </main>
@@ -58,7 +60,6 @@ export function generateMetadata({ params }: Params): Metadata {
       title,
       images: [post.ogImage.url],
     },
-    
   };
 }
 
