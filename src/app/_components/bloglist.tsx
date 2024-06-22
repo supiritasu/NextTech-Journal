@@ -9,7 +9,6 @@ type Props = {
 };
 
 export function BlogList({ posts }: Props) {
-  
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const handleTagClick = (tag: string) => {
@@ -31,56 +30,61 @@ export function BlogList({ posts }: Props) {
   const uniqueTags = Array.from(new Set(posts.flatMap(post => post.tags)));
 
   return (
-    <section className="text-gray-600 body-font overflow-hidden">
-      <div className="container px-5 py-24 mx-auto flex flex-wrap">
-        <aside className="w-full md:w-1/4 mb-8 md:mb-0">
-          <div className="sticky top-0">
-            <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
-              More<br />Stories
-            </h2>
-            <div className="mr-10 mb-8 p-4 border border-gray-300 rounded-lg">
-              <div className="flex flex-wrap">
-                {uniqueTags.map(tag => (
+    <section className="bg-gradient-to-b from-gray-50 to-white text-gray-800 body-font overflow-hidden">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-wrap -mx-4">
+          <aside className="w-full md:w-1/4 px-4 mb-8 md:mb-0">
+            <div className="sticky top-24">
+              <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight text-gray-900">
+                Explore<br />Stories
+              </h2>
+              <div className="p-6 bg-white shadow-lg rounded-lg">
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">Filter by Tags</h3>
+                <div className="flex flex-wrap">
+                  {uniqueTags.map(tag => (
+                    <button
+                      key={tag}
+                      onClick={() => handleTagClick(tag)}
+                      className={`text-sm mb-2 mr-2 px-3 py-1 rounded-full transition-colors duration-200 ${
+                        selectedTags.includes(tag) 
+                          ? 'bg-indigo-600 text-white' 
+                          : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      }`}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+                {selectedTags.length > 0 && (
                   <button
-                    key={tag}
-                    onClick={() => handleTagClick(tag)}
-                    className={`text-xs mb-2 mr-2 px-3 py-1 rounded-full ${
-                      selectedTags.includes(tag) ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-700'
-                    }`}
+                    onClick={handleClearTags}
+                    className="mt-4 text-sm px-4 py-2 rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors duration-200"
                   >
-                    {tag}
+                    Clear Filters
                   </button>
-                ))}
-                <button
-                  onClick={handleClearTags}
-                  className="text-xs mb-2 mr-2 px-3 py-1 rounded-full bg-red-500 text-white"
-                >
-                  Clear Tags
-                </button>
+                )}
               </div>
             </div>
-          </div>
-        </aside>
-        <div className="w-full md:w-3/4">
-          <div className="-my-8 divide-y-2 divide-gray-100">
-            {filteredPosts.map((post) => (
-              <div key={post.slug} className="py-8 flex flex-wrap md:flex-nowrap">
-                <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                  <span className="text-sm text-gray-500">{post.date}</span>
-                  <div className="flex flex-wrap mt-1">
-                    {post.tags.map(tag => (
-                      <span key={tag} className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full mr-2 mb-2">
-                        {tag}
-                      </span>
-                    ))}
+          </aside>
+          <div className="w-full md:w-3/4 px-4">
+            <div className="space-y-10">
+              {filteredPosts.map((post) => (
+                <div key={post.slug} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex flex-wrap items-center mb-4">
+                    <span className="text-sm text-gray-500 mr-4">{post.date}</span>
+                    <div className="flex flex-wrap">
+                      {post.tags.map(tag => (
+                        <span key={tag} className="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full mr-2 mb-2">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="md:flex-grow">
-                  <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">{post.title}</h2>
-                  <p className="leading-relaxed">{post.excerpt}</p>
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-3">{post.title}</h2>
+                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
                   <Link href={`/posts/${post.slug}`}>
-                    <span className="text-green-500 inline-flex items-center mt-4">
-                      Learn More
+                    <span className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors duration-200">
+                      Read More
                       <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14"></path>
                         <path d="M12 5l7 7-7 7"></path>
@@ -88,8 +92,8 @@ export function BlogList({ posts }: Props) {
                     </span>
                   </Link>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
