@@ -1,8 +1,8 @@
 ---
 title: "6 Next.jsのApp Routerを使用したZennスタイルのMarkdownサポート"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+excerpt: "Next.js の App Router プロジェクトに Zenn スタイルの Markdown を導入する方法を解説。従来の Pages Router との違いや、必要なライブラリのインストール、ファイル設定の手順を詳細に説明し、つまずきやすいポイントにも触れています。"
 coverImage: "/assets/blog/preview/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
+date: "2024/06/20"
 author:
   name: Joe Haddad
   picture: "/assets/blog/authors/joe.jpeg"
@@ -10,15 +10,6 @@ ogImage:
   url: "/assets/blog/preview/cover.jpg"
 tags: ['next.js','zenn']
 ---
-
-
-Next.jsのApp Routerを使用しているプロジェクトにzenn-markdown-html，zenn-content-css，zenn-embed-elementsを導入する手順を説明します．これらのライブラリを使うことで，ZennスタイルのMarkdownをHTMLに変換し，適切なスタイリングと埋め込み要素をサポートできます．
-
-
-
-
-
-
 
 ## はじめに
 
@@ -35,13 +26,6 @@ Zenn Markdownの導入に関する記事を読み進めていたところ，ブ�
 ## 原因
 Next.jsの新しい`App Router`を使用している場合，`_app.tsx`と`_document.tsx`の代わりに，`app/layout.tsx`を使用してアプリケーション全体のレイアウトを定義しているようです．
 ただし，従来のPages Routerを使用している場合は，`_app.tsx`と`_document.tsx`を`src/pages`ディレクトリに配置する必要があります．
-## 必要なライブラリのインストール
-
-まず，必要なライブラリをインストールします．
-
-```bash
-yarn add zenn-markdown-html zenn-content-css zenn-embed-elements
-```
 
 ## バージョン情報
 | 利用ツール             | バージョン |
@@ -51,9 +35,12 @@ yarn add zenn-markdown-html zenn-content-css zenn-embed-elements
 | zenn-content-css     | 0.1.81 |
 | zenn-embed-elements  | 0.1.81 |
 
+## 必要なライブラリのインストール
+まず，必要なライブラリをインストールします．
 
-
-
+```bash
+yarn add zenn-markdown-html zenn-content-css zenn-embed-elements
+```
 
 ## 1. markdownToHtml.tsの設定
 
@@ -84,9 +71,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 :::message　alert
 layout.tsxの先頭に`"use client";`を必ず記述してください！
 :::
-
-
-
 
 
 ::::details layout.tsxのコード全体
@@ -149,7 +133,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 ::::
-## 3. metadata.tsの作成
+
+このままではまだ下図のようなエラーが出ると思います．
+
+エラーメッセージは，"use client"ディレクティブを使用したコンポーネントでmetadataをエクスポートすることができないことを示しています．
+今回はmetadataエクスポートを他の場所に移動し，"use client"ディレクティブを適用するコンポーネントとmetadataエクスポートを分離することで解決しました．
+
+![](/assets/blog/zenn-ver/aaa.png)
+
+
+## 3. metadata.tsxの作成
+
+以下のように`layout.tsx`からMetadataの部分を移動するだけで解決できます．
+
+```ts:metadata.tsx
+// src/app/metadata.ts
+import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import type { Metadata } from "next";
+import "./globals.css";
+import 'zenn-content-css';
+
+export const metadata: Metadata = {
+    title: `Next.js Blog Example with ${CMS_NAME}`,
+    description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+    openGraph: {
+      images: [HOME_OG_IMAGE_URL],
+    },
+  };
+```
 
 
 以上の手順に従って設定することで，Next.jsのApp RouterプロジェクトにZennスタイルのMarkdownを導入できます．

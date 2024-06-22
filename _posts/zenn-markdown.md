@@ -1,11 +1,9 @@
 ---
 title: "#5 zennのマークダウン記法で書く"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+excerpt: "Zenn独自のマークダウン記法を紹介。メッセージボックスの作成方法、数式の挿入、YouTubeの埋め込み、GitHubリンクの表示など、Zenn特有の機能を使った記事の書き方を解説します。"
 coverImage: "/assets/blog/preview/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
-author:
-  name: Joe Haddad
-  picture: "/assets/blog/authors/joe.jpeg"
+date: "2024/06/20"
+
 ogImage:
   url: "/assets/blog/preview/cover.jpg"
 tags: ['next.js','zenn']
