@@ -101,7 +101,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
