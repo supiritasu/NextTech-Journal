@@ -5,6 +5,26 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 
+import 'zenn-content-css';
+import { useEffect } from 'react';
+
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   useEffect(() => {
+//     import('zenn-embed-elements');
+//   }, []);
+
+//   return (
+//     <html lang="en">
+//       <head>
+//         <meta charSet="utf-8" />
+//         <meta name="viewport" content="width=device-width, initial-scale=1" />
+//         <link rel="shortcut icon" href="/favicon.ico" />
+//       </head>
+//       <body>{children}</body>
+//     </html>
+//   );
+// }
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

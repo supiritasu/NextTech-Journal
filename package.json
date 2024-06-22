@@ -14,7 +14,10 @@
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "zenn-content-css": "^0.1.154",
+    "zenn-embed-elements": "^0.1.154",
+    "zenn-markdown-html": "^0.1.154"
   },
   "devDependencies": {
     "@types/node": "^20",
