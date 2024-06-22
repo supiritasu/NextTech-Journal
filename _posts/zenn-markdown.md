@@ -39,3 +39,13 @@ tags: ['next.js','zenn']
 :::message alert
 警告メッセージをここに
 :::
+
+https://www.youtube.com/watch?v=WRVsOCh907o
+
+
+$$
+e^{i\theta} = \cos\theta + i\sin\theta
+$$
+
+https://github.com/octocat/Hello-World/blob/master/README
+
