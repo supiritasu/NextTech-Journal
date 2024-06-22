@@ -1,4 +1,4 @@
-"use client"; // クライアントコンポーネントとして指定
+"use client";
 
 import React, { useState } from 'react';
 import { Post } from "@/interfaces/post";
@@ -10,14 +10,22 @@ type Props = {
 
 export function BlogList({ posts }: Props) {
   
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const handleTagClick = (tag: string) => {
-    setSelectedTag(tag === selectedTag ? null : tag);
+    setSelectedTags(prevSelectedTags =>
+      prevSelectedTags.includes(tag)
+        ? prevSelectedTags.filter(t => t !== tag)
+        : [...prevSelectedTags, tag]
+    );
   };
 
-  const filteredPosts = selectedTag
-    ? posts.filter(post => post.tags.includes(selectedTag))
+  const handleClearTags = () => {
+    setSelectedTags([]);
+  };
+
+  const filteredPosts = selectedTags.length > 0
+    ? posts.filter(post => selectedTags.some(tag => post.tags.includes(tag)))
     : posts;
 
   const uniqueTags = Array.from(new Set(posts.flatMap(post => post.tags)));
@@ -28,20 +36,28 @@ export function BlogList({ posts }: Props) {
         <aside className="w-full md:w-1/4 mb-8 md:mb-0">
           <div className="sticky top-0">
             <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
-              More Stories
+              More<br />Stories
             </h2>
-            <div className="mb-8 p-4 border border-gray-300 rounded-lg">
-              {uniqueTags.map(tag => (
+            <div className="mr-10 mb-8 p-4 border border-gray-300 rounded-lg">
+              <div className="flex flex-wrap">
+                {uniqueTags.map(tag => (
+                  <button
+                    key={tag}
+                    onClick={() => handleTagClick(tag)}
+                    className={`text-xs mb-2 mr-2 px-3 py-1 rounded-full ${
+                      selectedTags.includes(tag) ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-700'
+                    }`}
+                  >
+                    {tag}
+                  </button>
+                ))}
                 <button
-                  key={tag}
-                  onClick={() => handleTagClick(tag)}
-                  className={`block w-full text-left mb-2 px-4 py-2 rounded-full ${
-                    selectedTag === tag ? 'bg-black text-white' : 'bg-white text-black border border-black'
-                  }`}
+                  onClick={handleClearTags}
+                  className="text-xs mb-2 mr-2 px-3 py-1 rounded-full bg-red-500 text-white"
                 >
-                  {tag}
+                  Clear Tags
                 </button>
-              ))}
+              </div>
             </div>
           </div>
         </aside>
@@ -49,25 +65,27 @@ export function BlogList({ posts }: Props) {
           <div className="-my-8 divide-y-2 divide-gray-100">
             {filteredPosts.map((post) => (
               <div key={post.slug} className="py-8 flex flex-wrap md:flex-nowrap">
-                <aside className="w-full md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col hidden md:block">
-                  <div className="flex flex-wrap">
+                <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                  <span className="text-sm text-gray-500">{post.date}</span>
+                  <div className="flex flex-wrap mt-1">
                     {post.tags.map(tag => (
-                      <span key={tag} className="bg-white text-black border border-black px-2 py-1 rounded-full mr-2 mb-2">
+                      <span key={tag} className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full mr-2 mb-2">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <span className="mt-1 text-gray-500 text-sm">{post.date}</span>
-                </aside>
+                </div>
                 <div className="md:flex-grow">
                   <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">{post.title}</h2>
                   <p className="leading-relaxed">{post.excerpt}</p>
-                  <Link href={`/posts/${post.slug}`} className="text-green-500 inline-flex items-center mt-4">
-                    Learn More
-                    <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"></path>
-                      <path d="M12 5l7 7-7 7"></path>
-                    </svg>
+                  <Link href={`/posts/${post.slug}`}>
+                    <span className="text-green-500 inline-flex items-center mt-4">
+                      Learn More
+                      <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </span>
                   </Link>
                 </div>
               </div>
