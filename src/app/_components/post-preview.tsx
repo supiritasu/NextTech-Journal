@@ -5,7 +5,7 @@ type Props = {
   title: string;
   coverImage: string;
   date: string;
-  excerpt: string;
+  // excerpt: string;
   tags: string[];
   slug: string;
   
@@ -15,7 +15,7 @@ export function PostPreview({
   title,
   coverImage,
   date,
-  excerpt,
+  // excerpt,
   slug,
   tags,
 }: Props) {
@@ -37,7 +37,7 @@ export function PostPreview({
           tags.map((tag) => <li className="font-bold mb-12">{tag}</li>)
         }
       </ul>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      {/* <p className="text-lg leading-relaxed mb-4">{excerpt}</p> */}
     </div>
   );
 }

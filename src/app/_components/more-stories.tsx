@@ -1,6 +1,7 @@
+import React from 'react';
 import { Post } from "@/interfaces/post";
 import { PostPreview } from "./post-preview";
-import Tabs from '../_components/Tabs'
+import Tabs from '../_components/Tabs';
 
 type Props = {
   posts: Post[];
@@ -12,7 +13,7 @@ export function MoreStories({ posts }: Props) {
       <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
         More Stories
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
         {posts.map((post) => (
           <PostPreview
             key={post.slug}
@@ -20,13 +21,12 @@ export function MoreStories({ posts }: Props) {
             coverImage={post.coverImage}
             date={post.date}
             slug={post.slug}
-            excerpt={post.excerpt}
+            // excerpt={post.excerpt}
             tags={post.tags}
           />
-          
         ))}
       </div>
-      <Tabs tabs={['Tab1', 'Tab2', 'Tab3']}/>
+      <Tabs tabs={['Tab1', 'Tab2', 'Tab3']} />
     </section>
   );
 }
