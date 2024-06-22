@@ -9,8 +9,11 @@ type Props = {
   posts: Post[];
 };
 
+const POSTS_PER_PAGE = 5; // 1ページあたりのポスト数を定義
+
 export function BlogList({ posts }: Props) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleTagClick = (tag: string) => {
     setSelectedTags(prevSelectedTags =>
@@ -18,23 +21,36 @@ export function BlogList({ posts }: Props) {
         ? prevSelectedTags.filter(t => t !== tag)
         : [...prevSelectedTags, tag]
     );
+    setCurrentPage(1); // タグが変更されたら1ページ目に戻す
   };
 
   const handleClearTags = () => {
     setSelectedTags([]);
+    setCurrentPage(1);
   };
 
   const filteredPosts = selectedTags.length > 0
     ? posts.filter(post => selectedTags.some(tag => post.tags.includes(tag)))
     : posts;
 
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+
+  const paginatedPosts = filteredPosts.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
+
   const uniqueTags = Array.from(new Set(posts.flatMap(post => post.tags)));
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   return (
     <section className="bg-gradient-to-b from-gray-50 to-white text-gray-800 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -mx-4">
-          <aside className="w-full md:w-1/4 px-4 mb-8 md:mb-0">
+        <aside className="w-full md:w-1/4 px-4 mb-8 md:mb-0">
             <div className="sticky top-24">
               <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight text-gray-900">
                 Explore<br />Stories
@@ -73,11 +89,10 @@ export function BlogList({ posts }: Props) {
                 github="your_github_username"
               />
             </div>
-
-          </aside>
+            </aside>
           <div className="w-full md:w-3/4 px-4">
             <div className="space-y-10">
-              {filteredPosts.map((post) => (
+              {paginatedPosts.map((post) => (
                 <div key={post.slug} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                   <div className="flex flex-wrap items-center mb-4">
                     <span className="text-sm text-gray-500 mr-4">{post.date}</span>
@@ -103,11 +118,70 @@ export function BlogList({ posts }: Props) {
                 </div>
               ))}
             </div>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+type PaginationProps = {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+};
+
+const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <nav className="flex justify-center mt-8">
+      <ul className="flex space-x-2">
+        {currentPage > 1 && (
+          <li>
+            <button
+              onClick={() => onPageChange(currentPage - 1)}
+              className="px-3 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors"
+            >
+              Previous
+            </button>
+          </li>
+        )}
+        {pageNumbers.map((number) => (
+          <li key={number}>
+            <button
+              onClick={() => onPageChange(number)}
+              className={`px-3 py-2 rounded transition-colors ${
+                currentPage === number
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              {number}
+            </button>
+          </li>
+        ))}
+        {currentPage < totalPages && (
+          <li>
+            <button
+              onClick={() => onPageChange(currentPage + 1)}
+              className="px-3 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors"
+            >
+              Next
+            </button>
+          </li>
+        )}
+      </ul>
+    </nav>
+  );
+};
 
 export default BlogList;
