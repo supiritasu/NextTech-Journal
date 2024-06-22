@@ -94,16 +94,16 @@ export function BlogList({ posts }: Props) {
             <div className="space-y-10">
               {paginatedPosts.map((post) => (
                 <div key={post.slug} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex flex-wrap items-center mb-4">
-                    <span className="text-sm text-gray-500 mr-4">{post.date}</span>
-                    <div className="flex flex-wrap">
-                      {post.tags.map(tag => (
-                        <span key={tag} className="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full mr-2 mb-2">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                <div className="flex items-center mb-4">
+                  <div className="text-sm text-gray-500 mr-4">{post.date}</div>
+                  <div className="flex flex-wrap">
+                    {post.tags.map(tag => (
+                      <span key={tag} className="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full mr-2">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
+                </div>
                   <h2 className="text-2xl font-semibold text-gray-900 mb-3">{post.title}</h2>
                   <p className="text-gray-600 mb-4">{post.excerpt}</p>
                   <Link href={`/posts/${post.slug}`}>
@@ -143,7 +143,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
   }
 
   return (
-    <nav className="flex justify-center mt-8">
+    <nav className="flex justify-center mt-8 ">
       <ul className="flex space-x-2">
         {currentPage > 1 && (
           <li>
