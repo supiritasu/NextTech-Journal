@@ -10,7 +10,7 @@ export default function Index() {
   const allPosts = getAllPosts();
 
 
-  const morePosts = allPosts.slice(1);
+  const morePosts = allPosts.slice();
 
   return (
     <main>
