@@ -95,10 +95,10 @@ export function BlogList({ posts }: Props) {
               {paginatedPosts.map((post) => (
                 <div key={post.slug} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="text-sm text-gray-500 mr-4">{post.date}</div>
+                  <div className="text-sm text-gray-500 mb-1 mr-4">{post.date}</div>
                   <div className="flex flex-wrap">
                     {post.tags.map(tag => (
-                      <span key={tag} className="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full mr-2">
+                      <span key={tag} className="text-xs mb-1 bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full mr-2">
                         {tag}
                       </span>
                     ))}
