@@ -16,11 +16,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }, []);
 
   return (
-    <html lang="jp">
+    <html lang="ja">
       <head>
-        <title>NextTechへようこそ！本ブログでは一般大学生がプログラミング，旅行，留学，雑談記事を暇なときに投稿します．不定期です！
-            プログラミングに関する解説や留学体験記，おすすめの旅行先や実用的な雑談記事を投稿予定です！
-            興味のある方はぜひご覧ください！！！</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>NextTechへようこそ！プログラミング、旅行、留学、雑談の記事を投稿</title>
+        <meta name="description" content="NextTechでは、一般大学生がプログラミング、旅行、留学、雑談に関する記事を不定期に投稿しています。プログラミングの解説、留学体験記、おすすめの旅行先、実用的な雑談記事などをご覧いただけます。" />
+        <meta name="keywords" content="プログラミング,旅行,留学,雑談,大学生ブログ" />
+        <meta name="author" content="NextTech" />
+        <link rel="canonical" href="https://your-domain.com" />
+
+        <meta property="og:title" content="NextTech - プログラミング、旅行、留学、雑談の記事" />
+        <meta property="og:description" content="NextTechでは、一般大学生がプログラミング、旅行、留学、雑談に関する記事を不定期に投稿しています。" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://your-domain.com" />
+        <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="NextTech - プログラミング、旅行、留学、雑談の記事" />
+        <meta name="twitter:description" content="NextTechでは、一般大学生がプログラミング、旅行、留学、雑談に関する記事を不定期に投稿しています。" />
+        <meta name="twitter:image" content="https://your-domain.com/twitter-image.jpg" />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
