@@ -77,8 +77,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <Analytics/>
       </body>
-      <GoogleTagManager gtmId="G-KMQDB224Q6"/>
-      <GoogleAnalytics gaId="G-KMQDB224Q6" />
+      <GoogleTagManager gtmId="G-50Z92B2D6S"/>
+      <GoogleAnalytics gaId="G-50Z92B2D6S" />
     </html>
   );
 }
