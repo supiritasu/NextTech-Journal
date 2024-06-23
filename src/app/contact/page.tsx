@@ -6,7 +6,6 @@ export default function Index() {
   
   return (
     <>
-    <Header/>
     <main>
       <Contact />
     </main>

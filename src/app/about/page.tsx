@@ -14,7 +14,6 @@ const About: React.FC = () => {
 
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
         <div className="w-full flex justify-center my-8">
           <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-8">

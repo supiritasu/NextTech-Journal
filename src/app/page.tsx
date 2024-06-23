@@ -13,8 +13,6 @@ export default function Index() {
 
   return (
     <main>
-      <Header />
-      
       <Container>
         <Intro />
         <Hero/>

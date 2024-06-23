@@ -12,7 +12,6 @@ export default function Index() {
   const BlogLists = allPosts.slice();
   return (
     <>
-    <Header/>
     <Container>
     {BlogLists.length > 0 && <BlogList posts={BlogLists} />}
     </Container>
