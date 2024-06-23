@@ -2,9 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
-import Alert from "@/app/_components/alert";
 import Container from "@/app/_components/container";
-import Header from "@/app/_components/header";
 import PostHeader from "@/app/_components/post-header";
 import Author from "@/app/_components/author";
 import markdownToHtml from 'zenn-markdown-html';
@@ -20,20 +18,34 @@ export default async function Post({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   return (
-    <main>
-      {/* <Alert preview={post.preview} /> */}
+    <main className="bg-gray-50 min-h-screen py-12">
       <Container>
-      <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            tags={post.tags}
-          />
-        <article className="mb-32 znc">
-
-          <PostBody content={content} />
-
-        </article>
+        <div className="flex flex-col md:flex-row md:space-x-8">
+          <aside className="hidden md:block w-full md:w-1/4 mb-8 md:mb-0">
+            <div className="sticky top-8 ">
+              <Author
+                name="Supiritasu"
+                picture="/favicon/twitter_icon.jpeg"
+                bio="A short bio about yourself. You can describe your interests, expertise, or anything else you'd like readers to know."
+                twitter="your_twitter_handle"
+                github="your_github_username"
+              />
+            </div>
+          </aside>
+          <div className="w-full md:w-3/4">
+            <article className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <PostHeader
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                tags={post.tags}
+              />
+              <div className="p-6 znc">
+                <PostBody content={content} />
+              </div>
+            </article>
+          </div>
+        </div>
       </Container>
     </main>
   );
