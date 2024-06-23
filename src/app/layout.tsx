@@ -69,8 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
-        <GoogleTagManager gtmId={process.env.GA_ID ?? ""} />
-        <GoogleAnalytics gaId={process.env.GA_ID ?? ""} />
+
       </head>
       <body className={inter.className}>
         <Header/>
@@ -78,6 +77,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <Analytics/>
       </body>
+      <GoogleTagManager gtmId={process.env.GA_ID ?? ""} />
+      <GoogleAnalytics gaId={process.env.GA_ID ?? ""} />
     </html>
   );
 }
