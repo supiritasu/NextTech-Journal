@@ -6,7 +6,7 @@ import "./globals.css";
 import 'zenn-content-css';
 import Header from './_components/header';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
-import { Analytics } from "@vercel/analytics/react"
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -75,10 +75,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header/>
         <div className="min-h-screen">{children}</div>
         <Footer />
-        <Analytics/>
       </body>
-      <GoogleTagManager gtmId="G-KMQDB224Q6"/>
-      <GoogleAnalytics gaId="G-KMQDB224Q6" />
+      <GoogleTagManager gtmId="G-KMQDB224Q6" />
     </html>
   );
 }
