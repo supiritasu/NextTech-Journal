@@ -4,7 +4,7 @@ excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo
 coverImage: "/assets/blog/dynamic-routing/cover.jpg"
 date: "2024/06/18 12:21"
 ogImage:
-  url: "/assets/blog/dynamic-routing/cover.jpg"
+  url: "/assets/blog/01/cover.jpg"
 tags: ['next.js','typescript', 'JavaScript', 'マークダウン']
 ---
 

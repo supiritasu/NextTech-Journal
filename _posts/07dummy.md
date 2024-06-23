@@ -1,13 +1,10 @@
 ---
 title: "#7 Next.jsで始める高速ウェブ開発"
 excerpt: "Next.jsは、Reactベースのフレームワークで、高速なウェブアプリケーション開発を可能にします。サーバーサイドレンダリング、静的サイト生成、ルーティングなどの機能を提供し、開発者の生産性を大幅に向上させます。"
-coverImage: "/assets/blog/nextjs/cover.jpg"
+coverImage: "/assets/blog/03/cover.jpg"
 date: "2024/06/22 11:40"
-author:
-  name: 山田太郎
-  picture: "/assets/blog/authors/taro.jpeg"
 ogImage:
-  url: "/assets/blog/nextjs/cover.jpg"
+  url: "/assets/blog/03/cover.jpg"
 tags: ['Next.js', 'React', 'JavaScript']
 ---
 

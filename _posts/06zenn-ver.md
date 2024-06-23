@@ -1,13 +1,10 @@
 ---
 title: "#6 Next.jsのApp Routerを使用したZennスタイルのMarkdownサポート"
 excerpt: "Next.js の App Router プロジェクトに Zenn スタイルの Markdown を導入する方法を解説。従来の Pages Router との違いや、必要なライブラリのインストール、ファイル設定の手順を詳細に説明し、つまずきやすいポイントにも触れています。"
-coverImage: "/assets/blog/preview/cover.jpg"
+coverImage: "/assets/blog/03/cover.jpg"
 date: "2024/06/20 10:00"
-author:
-  name: Joe Haddad
-  picture: "/assets/blog/authors/joe.jpeg"
 ogImage:
-  url: "/assets/blog/preview/cover.jpg"
+  url: "/assets/blog/03/cover.jpg"
 tags: ['next.js','zenn']
 ---
 
@@ -139,7 +136,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 エラーメッセージは，"use client"ディレクティブを使用したコンポーネントでmetadataをエクスポートすることができないことを示しています．
 今回はmetadataエクスポートを他の場所に移動し，"use client"ディレクティブを適用するコンポーネントとmetadataエクスポートを分離することで解決しました．
 
-![](/assets/blog/zenn-ver/aaa.png)
+![](/assets/blog/06/aaa.png)
 
 
 ## 3. metadata.tsxの作成

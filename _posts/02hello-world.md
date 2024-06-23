@@ -1,13 +1,10 @@
 ---
 title: "#2 初めての一人旅 in 博多 ~前編~"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/assets/blog/hello-world/cover.jpg"
+coverImage: "/assets/blog/02/cover.jpg"
 date: "2024/06/18 17:10"
-author:
-  name: Tim Neutkens
-  picture: "/assets/blog/authors/tim.jpeg"
 ogImage:
-  url: "/assets/blog/hello-world/cover.jpg"
+  url: "/assets/blog/02/cover.jpg"
 tags: ['旅行','一人旅']
 ---
 
