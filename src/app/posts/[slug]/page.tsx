@@ -23,7 +23,7 @@ export default async function Post({ params }: Params) {
       <Container>
         <div className="flex flex-col md:flex-row md:space-x-8">
           <aside className="hidden md:block w-full md:w-1/4 mb-8 md:mb-0">
-            <div className="sticky top-8 ">
+            <div className="sticky top-8">
               <Author
                 name="Supiritasu"
                 picture="/favicon/twitter_icon.jpeg"
