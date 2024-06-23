@@ -65,12 +65,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 
       </head>
+
+      <GoogleTagManager gtmId="G-50Z92B2D6S" />
+      <GoogleAnalytics gaId="G-50Z92B2D6S" />
       <body className={inter.className}>
         <Header/>
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>
-      <GoogleTagManager gtmId="G-50Z92B2D6S" />
     </html>
   );
 }
