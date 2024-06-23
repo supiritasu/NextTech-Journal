@@ -31,7 +31,7 @@ const Pagination: React.FC<Props> = ({ currentPage, totalPages, onPageChange }) 
               onClick={() => onPageChange(number)}
               className={`px-3 py-2 rounded transition-colors ${
                 currentPage === number
-                  ? 'bg-indigo-800 text-indigo-100'
+                  ? 'bg-indigo-100 text-indigo-800'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
