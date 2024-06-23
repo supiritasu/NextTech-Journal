@@ -84,7 +84,7 @@ export function BlogList({ posts }: Props) {
               <Author
                 name="Supiritasu"
                 picture="/favicon/twitter_icon.jpeg"
-                bio="A short bio about yourself. You can describe your interests, expertise, or anything else you'd like readers to know."
+                bio="そこら辺の一般大学生です.趣味で当ブログを作成しました．技術系の内容をメインに不定期更新の予定です！"
                 twitter="your_twitter_handle"
                 github="your_github_username"
               />

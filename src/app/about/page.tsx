@@ -62,38 +62,42 @@ const About: React.FC = () => {
               {activeTab === 'profile' && (
                 <div>
                   <p className="text-gray-700 mb-4">
-                    私は、東京都出身の学生です。趣味は読書とランニングで、週末はよく公園を走っています。
+                  そこら辺の一般大学生です．趣味で当ブログを作成しました．技術系の内容を中心に不定期更新の予定です！
                   </p>
-                  <p className="text-gray-700">
+                  {/* <p className="text-gray-700">
                     将来の夢は、自分のスタートアップを立ち上げることです。ITの力で世界を変えたいと考えています。
-                  </p>
+                  </p> */}
                 </div>
               )}
               {activeTab === 'skills' && (
                 <div>
                   <ul className="list-disc list-inside text-gray-700">
-                    <li>JavaScript</li>
-                    <li>React</li>
-                    <li>Node.js</li>
                     <li>Python</li>
                     <li>Java</li>
+                    <li>C</li>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>Next.js</li>
+
                   </ul>
                 </div>
               )}
               {activeTab === 'experience' && (
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  {/* <h3 className="text-lg font-semibold text-gray-800 mb-2">
                     インターン
-                  </h3>
+                  </h3> */}
                   <p className="text-gray-700 mb-4">
-                    2022年の夏、ITベンチャー企業でインターンを経験しました。フロントエンド開発に携わり、React.jsを使ったWebアプリケーションの開発に従事しました。
+                    ラズパイでマイクラサーバーやNASサーバーを構築しました！
                   </p>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  {/* <h3 className="text-lg font-semibold text-gray-800 mb-2">
                     プロジェクト
                   </h3>
                   <p className="text-gray-700">
                     大学のハッカソンで、チームメンバーと共に災害時の安否確認アプリを開発しました。優勝することができ、プロジェクトマネジメントやチームワークの重要性を学びました。
-                  </p>
+                  </p> */}
                 </div>
               )}
             </div>
