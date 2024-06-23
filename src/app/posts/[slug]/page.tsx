@@ -7,6 +7,7 @@ import PostHeader from "@/app/_components/post-header";
 import Author from "@/app/_components/author";
 import markdownToHtml from 'zenn-markdown-html';
 import PostBody from "@/app/_components/post-body";
+import TableOfContents from "@/app/_components/TableOfContents";
 
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
@@ -30,6 +31,7 @@ export default async function Post({ params }: Params) {
                 twitter="your_twitter_handle"
                 github="your_github_username"
               />
+              <TableOfContents />
             </div>
           </aside>
           <div className="w-full md:w-3/4">
