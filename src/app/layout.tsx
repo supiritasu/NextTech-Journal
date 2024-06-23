@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <GoogleTagManager gtmId="GTM-KMQDB224Q6" />
+      <GoogleTagManager gtmId="G-KMQDB224Q6" />
       <body className={inter.className}>
         <Header/>
         <div className="min-h-screen">{children}</div>
