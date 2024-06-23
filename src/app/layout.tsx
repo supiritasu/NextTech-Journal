@@ -1,5 +1,3 @@
-"use client";
-import { useEffect } from 'react';
 import Footer from "@/app/_components/footer";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -11,10 +9,6 @@ import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    import('zenn-embed-elements');
-  }, []);
-
   return (
     <html lang="ja">
       <head>
