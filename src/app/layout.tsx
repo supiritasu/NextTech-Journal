@@ -5,6 +5,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import 'zenn-content-css';
 import Header from './_components/header';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,6 +49,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+
+
+      <GoogleTagManager gtmId={process.env.GA_ID ?? ""} />
+      <GoogleAnalytics gaId={process.env.GA_ID ?? ""} />
       </head>
       <body className={inter.className}>
         <Header/>
