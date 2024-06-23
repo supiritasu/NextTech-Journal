@@ -70,7 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>
-      <GoogleTagManager gtmId="G-KMQDB224Q6" />
+      <GoogleTagManager gtmId="G-50Z92B2D6S" />
     </html>
   );
 }
