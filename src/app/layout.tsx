@@ -8,8 +8,6 @@ import Header from './_components/header';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from "@vercel/analytics/react"
 
-
-
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -20,6 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="jp">
       <head>
+        <title>NextTechへようこそ！本ブログでは一般大学生がプログラミング，旅行，留学，雑談記事を暇なときに投稿します．不定期です！
+            プログラミングに関する解説や留学体験記，おすすめの旅行先や実用的な雑談記事を投稿予定です！
+            興味のある方はぜひご覧ください！！！</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -52,16 +53,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
-
-      <GoogleTagManager gtmId={process.env.GA_ID ?? ""} />
-      <GoogleAnalytics gaId={process.env.GA_ID ?? ""} />
+        <GoogleTagManager gtmId={process.env.GA_ID ?? ""} />
+        <GoogleAnalytics gaId={process.env.GA_ID ?? ""} />
       </head>
       <body className={inter.className}>
         <Header/>
         <div className="min-h-screen">{children}</div>
         <Footer />
         <Analytics/>
-        
       </body>
     </html>
   );
