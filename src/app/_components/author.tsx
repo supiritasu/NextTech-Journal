@@ -14,13 +14,13 @@ const Author: React.FC<AuthorProps> = ({ name, picture, bio, twitter, github }) 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md mt-8">
       <div className="flex items-center mb-4">
-        <Image
-          src={picture}
-          alt={name}
-          width={64}
-          height={64}
-          className="rounded-full mr-4"
-        />
+      <Image
+        src={picture}
+        alt={name}
+        width={64}
+        height={64}
+        className="rounded-full mr-4 w-11 h-11 object-cover"
+      />
         <div>
           <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
           <p className="text-sm text-gray-600">Author</p>
