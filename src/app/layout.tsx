@@ -58,8 +58,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <GoogleTagManager gtmId="G-KMQDB224Q6" />
-        <GoogleAnalytics gaId="G-KMQDB224Q6" />
+        <GoogleTagManager gtmId="G-50Z92B2D6S" />
+        <GoogleAnalytics gaId="G-50Z92B2D6S" />
         <Header/>
         <div className="min-h-screen">{children}</div>
         <Footer />
