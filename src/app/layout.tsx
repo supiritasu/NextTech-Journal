@@ -60,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
 
       <GoogleAnalytics gaId="G-KMQDB224Q6" />
+      <meta name="google-adsense-account" content="ca-pub-3517714019756094"></meta>
       </head>
       <body className={inter.className}>
         <Header/>
