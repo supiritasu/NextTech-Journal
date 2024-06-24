@@ -58,7 +58,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja">
       <head>
-      <GoogleTagManager gtmId="GTM-M26PC82Q" />
+
+      <GoogleAnalytics gaId="G-KMQDB224Q6" />
       </head>
       <body className={inter.className}>
         <Header/>
@@ -66,7 +67,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
       </body>
       <GoogleTagManager gtmId="GTM-M26PC82Q" />
-      <GoogleAnalytics gaId="G-KMQDB224Q6" />
     </html>
   );
 }
