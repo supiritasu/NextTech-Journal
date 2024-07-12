@@ -1,5 +1,5 @@
 ---
-title: "#10 ドキュメント通りにGoogleタグ設定したのにエラーが出る！"
+title: "#7 ドキュメント通りにGoogleタグ設定したのにエラーが出る！"
 excerpt: "正しく設定したはずなのにGTAGが認識されなかったので解決策を共有したいと思います．"
 coverImage: "/assets/blog/01/cover.jpg"
 date: "2024/06/24 15:56"

@@ -1,5 +1,5 @@
 ---
-title: "#9 独自ドメインでNetlify上にデプロイしたい！"
+title: "#6 独自ドメインでNetlify上にデプロイしたい！"
 excerpt: "今回は独自ドメインでNetlify上にデプロイしたのでその方法について分かりやすく解説していきたいと思います！"
 coverImage: "/assets/blog/01/cover.jpg"
 date: "2024/06/24 00:10"

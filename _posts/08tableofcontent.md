@@ -1,5 +1,5 @@
 ---
-title: "#11 ReactとNext.jsで動的な目次を実装する方法"
+title: "#8 ReactとNext.jsで動的な目次を実装する方法"
 excerpt: "正しく設定したはずなのにGTAGが認識されなかったので解決策を共有したいと思います．"
 coverImage: "/assets/blog/01/cover.jpg"
 date: "2024/06/24 16:35"
