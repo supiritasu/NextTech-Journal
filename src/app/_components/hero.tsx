@@ -29,7 +29,8 @@ const Hero: React.FC = () => {
           <Image
             className="object-cover object-center rounded"
             alt="hero"
-            src="https://dummyimage.com/720x600"
+            // src="https://dummyimage.com/720x600"
+            src="/assets/blog/Hero/3.jpg"
             width={720}
             height={600}
           />
