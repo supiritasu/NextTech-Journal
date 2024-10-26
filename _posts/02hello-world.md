@@ -1,6 +1,6 @@
 ---
 title: "#2 初めての一人旅 in 博多 ~前編~"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+excerpt: "初めての一人旅で博多を満喫した様子を，アクセス抜群の観光地や美味しいグルメと共にお届けします．ローカルフード，快適な移動手段，風光明媚なスポットまで，博多の魅力満載の前編です！"
 coverImage: "/assets/blog/02/cover.jpg"
 date: "2024/06/18 17:10"
 ogImage:
@@ -15,6 +15,22 @@ tags: ['旅行','一人旅']
 
 | ![Aについての画像](/assets/blog/02/blog02.JPG) | ![Bについての画像](/assets/blog/02/blog03.JPG) |
 | --------------------------------------------- | --------------------------------------------- |
+
+これは<span style="color: red;">赤い</span>テキストです．
+
+<img src=/assets/blog/02/blog02.JPG>
+<pre><img src="/assets/blog/02/blog02.JPG"></pre>
+
+<img src=/nexttech-journal/public/assets/blog/02/blog02.JPG>
+<img src="/Users/apple/Desktop/NextTech Journal/nexttech-journal/public/assets/blog/02/blog02.JPG">
+これは<span style="color: red;">赤い</span>テキストです．
+
+
+
+![Aについての画像](/assets/blog/02/blog02.JPG) ![Bについての画像](/assets/blog/02/blog03.JPG)
+| <img src="/assets/blog/02/blog02.JPG"> | <img src="/assets/blog/02/blog03.JPG" width="100"> |
+|---------------------------------------------------|---------------------------------------------------|
+| Aの説明                                           | Bの説明                                           |
 
 
 ## 昼ごはん

@@ -1,6 +1,7 @@
 ---
 title: "#1 Treeコマンドの使い方とオプション一覧"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+excerpt: "excerpt: "ファイル構成を視覚的に表示するtreeコマンドの使い方と各種オプションを徹底解説します．効率的なファイル管理に役立つツールとして，オプション設定でツリー表示をカスタマイズしてみましょう．"
+"
 coverImage: "/assets/blog/01/cover.jpg"
 date: "2024/06/18 12:21"
 ogImage:
@@ -10,11 +11,11 @@ tags: ['next.js','typescript', 'JavaScript', 'マークダウン']
 
 # treeコマンドとは
 
-treeコマンドはファイル構成をツリー構造で視覚的に分かりやすく表示してくれるコマンドです。
+treeコマンドはファイル構成をツリー構造で視覚的に分かりやすく表示してくれるコマンドです．
 
 ## インストール
 
-macユーザの方は`brew`でtreeコマンドをインストールしてください。
+macユーザの方は`brew`でtreeコマンドをインストールしてください．
 
 ```bash
 brew install tree
@@ -23,7 +24,7 @@ brew install tree
 
 ## オプション
 
-以下の表はtreeコマンドのオプションです。
+以下の表はtreeコマンドのオプションです．
 
 | オプション       | 説明 |
 |:----------------:|:------:|
@@ -43,17 +44,17 @@ brew install tree
 
 ## 使い方
 
-次のコマンドを実行すると、指定した条件でファイル構成がツリー状に表示されます。
+次のコマンドを実行すると，指定した条件でファイル構成がツリー状に表示されます．
 
 ```bash
 tree -L 4 -P "*.py|*.html"                                
 ```
 
 
-- `-L 4` は、現在のディレクトリから4レベルの深さまでのファイルとディレクトリを表示します。
-- `-P "*.py|*.html"` は、表示するファイルが.pyまたは.html拡張子を持つものに限定されることを指定します。
+- `-L 4` は，現在のディレクトリから4レベルの深さまでのファイルとディレクトリを表示します．
+- `-P "*.py|*.html"` は，表示するファイルが.pyまたは.html拡張子を持つものに限定されることを指定します．
 
-上記のコマンドを実行すると以下のようにツリー状にファイル構成が表示されます。
+上記のコマンドを実行すると以下のようにツリー状にファイル構成が表示されます．
 
 
 ::::details　ツリーコマンドの結果

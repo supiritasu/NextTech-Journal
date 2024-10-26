@@ -9,6 +9,46 @@ import markdownToHtml from 'zenn-markdown-html';
 import PostBody from "@/app/_components/post-body";
 import TableOfContents from "@/app/_components/TableOfContents";
 
+function sanitizeHtml(content: string): string {
+  let result = '';
+  let isInsideTag = false;
+  
+  // 文字列を1文字ずつ処理
+  for (let i = 0; i < content.length; i++) {
+    const char = content[i];
+    
+    // タグの開始を検出
+    if (char === '<') {
+      isInsideTag = true;
+      result += char;
+      continue;
+    }
+    
+    // タグの終了を検出
+    if (char === '>') {
+      isInsideTag = false;
+      result += char;
+      continue;
+    }
+    
+    // タグ内の文字はそのまま保持
+    if (isInsideTag) {
+      result += char;
+      continue;
+    }
+    
+    // タグ外の二重引用符は削除
+    if (char === '"') {
+      continue;
+    }
+    
+    // その他の文字はそのまま保持
+    result += char;
+  }
+  
+  return result;
+}
+
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
 
@@ -16,7 +56,9 @@ export default async function Post({ params }: Params) {
     return notFound();
   }
 
-  const content = await markdownToHtml(post.content || "");
+  const rawContent = await markdownToHtml(post.content || "");
+  const content = sanitizeHtml(rawContent);
+
 
   return (
     <main className="bg-gray-50 min-h-screen py-12">
