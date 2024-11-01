@@ -20,6 +20,15 @@ const config: Config = {
         success: "#0070f3",
         cyan: "#79FFE1",
       },
+      keyframes: {
+        'slide-flow': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }
+        }
+      },
+      animation: {
+        'slide-flow': 'slide-flow 20s linear 1s infinite'
+      },
       spacing: {
         28: "7rem",
       },
