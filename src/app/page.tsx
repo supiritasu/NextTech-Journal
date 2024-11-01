@@ -5,6 +5,8 @@ import { getAllPosts } from "@/lib/api";
 import Header from "./_components/header";
 import  Genere  from "./_components/genre";
 import Hero from "./_components/hero";
+import { useUser } from '@auth0/nextjs-auth0/client';
+
 export default function Index() {
   const allPosts = getAllPosts();
 
@@ -26,3 +28,4 @@ export default function Index() {
     </main>
   );
 }
+

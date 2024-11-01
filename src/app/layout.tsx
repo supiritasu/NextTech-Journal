@@ -5,6 +5,7 @@ import 'zenn-content-css';
 import Header from './_components/header';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 import { Metadata } from 'next';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 import Script from 'next/script'
 
 
@@ -74,7 +75,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <Header/>
+        <UserProvider>
+          <Header />
+          {/* <body>{children}</body> */}
+        </UserProvider>
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>
@@ -82,3 +86,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
