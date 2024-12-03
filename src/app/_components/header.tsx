@@ -35,7 +35,7 @@ const Header: React.FC = () => {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-4">
+        {/* <div className="flex items-center gap-4">
       {isLoading ? (
         <div className="text-sm text-gray-400">Loading...</div>
       ) : user ? (
@@ -64,15 +64,15 @@ const Header: React.FC = () => {
           >
             Sign in
           </Link>
-          {/* <Link
+          <Link
             href="/api/auth/signup"
             className="inline-flex items-center px-5 py-2 text-sm font-medium rounded-full text-white bg-green-600 hover:bg-green-700 transition-colors"
           >
             Sign up
-          </Link> */}
+          </Link>
     </div>
   )}
-</div>
+</div> */}
 
       </div>
     </header>
