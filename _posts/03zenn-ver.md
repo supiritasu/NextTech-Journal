@@ -5,7 +5,7 @@ coverImage: "/assets/blog/03/cover.jpg"
 date: "2024/06/20 10:00"
 ogImage:
   url: "/assets/blog/03/cover.jpg"
-tags: ['next.js','zenn']
+tags: ['Next.js','zenn']
 ---
 
 ## はじめに

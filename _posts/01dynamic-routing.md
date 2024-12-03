@@ -5,7 +5,7 @@ coverImage: "/assets/blog/01/cover.jpg"
 date: "2024/06/18 12:21"
 ogImage:
   url: "/assets/blog/01/cover.jpg"
-tags: ['next.js','typescript', 'JavaScript', 'マークダウン']
+tags: ['Next.js','typescript', 'JavaScript', 'マークダウン']
 ---
 
 # treeコマンドとは

@@ -5,7 +5,7 @@ coverImage: "/assets/blog/01/cover.jpg"
 date: "2024/06/24 16:35"
 ogImage:
   url: "/assets/blog/01/cover.jpg"
-tags: ["react", "nextjs", "typescript", "tailwindcss"]
+tags: ["react", "Next.js", "typescript", "tailwindcss"]
 ---
 
 

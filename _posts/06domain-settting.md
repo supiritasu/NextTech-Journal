@@ -5,7 +5,7 @@ coverImage: "/assets/blog/01/cover.jpg"
 date: "2024/06/24 00:10"
 ogImage:
   url: "/assets/blog/01/cover.jpg"
-tags: ['next.js', 'Netlify']
+tags: ['Next.js', 'Netlify']
 ---
 
 ## はじめに
