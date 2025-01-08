@@ -70,8 +70,8 @@ export default async function Post({ params }: Params) {
                 name="Supiritasu"
                 picture="/favicon/twitter_icon.jpeg"
                 bio="そこら辺の一般大学生です.趣味で当ブログを作成しました．技術系の内容をメインに不定期更新の予定です！"
-                twitter="your_twitter_handle"
-                github="your_github_username"
+                twitter="_ane__eku_mene"
+                github="supiritasu"
               />
               <TableOfContents />
             </div>

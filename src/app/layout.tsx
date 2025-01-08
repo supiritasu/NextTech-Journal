@@ -39,14 +39,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon/NextTech_Icon_32*32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/NextTech_Icon_16*16.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon/NextTech_Icon_180*180.png', sizes: '180x180', type: 'image/png' },
     ],
     other: [
-      { rel: 'mask-icon', url: '/favicon/safari-pinned-tab.svg', color: '#000000' },
+      { rel: 'mask-icon', url: '/favicon/NextTech_Icon.svg', color: '#000000' },
     ],
   },
   manifest: '/favicon/site.webmanifest',
